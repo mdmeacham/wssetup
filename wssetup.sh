@@ -30,7 +30,9 @@ sudo apt -y install flameshot
 
 # install MS Edge 
 wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_126.0.2592.68-1_amd64.deb?brand=M102
+mv microsoft* edge.deb
 
-sudo apt -y install ./microsoft*.deb
-sudo echo "192.168.68.7:/storage-pool      /mnt/nas        nfs     defaults,nofail         0       0" >> /etc/fstab
+sudo apt -y install edge.deb
+echo "192.168.68.7:/storage-pool      /mnt/nas        nfs     defaults,nofail         0       0" | sudo tee -a /etc/fstab
+sudo mkdir /mnt/nas
 sudo mount -a
