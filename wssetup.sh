@@ -1,8 +1,6 @@
 #!/bin/bash
 
-
-
-update-alternatives --install /usr/bin/vi vi /opt/nvim-linux64/bin/nvim 20
+sudo apt -y install neovim
 
 sudo apt -y install tmux
 echo 'test -z "$TMUX" && (tmux attach || tmux new-session)' >> ~/.bashrc
@@ -20,6 +18,7 @@ nvm install 20
 corepack enable
 
 yarn global add @quasar/cli
+PATH=$PATH:$(yarn global bin)
 echo "PATH=$PATH:$(yarn global bin)" >> ~/.bashrc
 
 
